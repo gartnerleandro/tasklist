@@ -10,8 +10,13 @@ const List = ({ elements }) => {
     return (
       <div className="list">
         {
-          elements.map((element, idx) => (
-            <Card title={element.title} body={element.body} key={`${idx * 2}`} status={element.status} />
+          elements.map((element) => (
+            <Card
+              title={element.title}
+              body={element.body}
+              key={element.id}
+              status={element.status}
+            />
           ))
         }
       </div>

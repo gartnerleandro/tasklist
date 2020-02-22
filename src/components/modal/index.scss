@@ -1,0 +1,36 @@
+@import '../../styles/constants.scss';
+
+div.modal {
+  background-color: $white;
+  border: 1px solid $gray;
+  box-shadow: 0 5px 8px 0 rgba($black,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 5px;
+  transition: all .8s;
+  width: 60%;
+  position: absolute;
+  top: 30%;
+  height: fit-content;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  button.close-modal {
+    color: $gray;
+    cursor: pointer;
+    float: right;
+    font-size: 18px;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      opacity: 0.4;
+    }
+
+    i {
+
+    }
+  }
+}
