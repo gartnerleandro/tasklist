@@ -19,4 +19,21 @@ div.card {
   div.card-body {
     padding: 5px;
   }
+
+  span.completed-message {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.completed {
+  background-color: rgba($secondary-light, 0.3);
+
+  > div {
+    text-decoration: line-through;
+  }
 }

@@ -1,3 +1,3 @@
-import Card from './Card';
+import Card, { CARD_STATUS } from './Card';
 
-export default Card;
+export { Card as default, CARD_STATUS };

@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Card from './index';
+import Card, { CARD_STATUS } from './index';
 
 describe('Card', () => {
   it('render card with the props pased', () => {
-    const wrapper = shallow(<Card title="test" body="content" />);
+    const wrapper = shallow(<Card title="test" body="content" status={CARD_STATUS.UNCOMPLETED} />);
 
     expect(wrapper.find('.card')).toHaveLength(1);
     expect(wrapper.find('.card').childAt(0).type()).toBe('div');

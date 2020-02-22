@@ -11,7 +11,7 @@ const List = ({ elements }) => {
       <div className="list">
         {
           elements.map((element, idx) => (
-            <Card title={element.title} body={element.body} key={`${idx * 2}`} />
+            <Card title={element.title} body={element.body} key={`${idx * 2}`} status={element.status} />
           ))
         }
       </div>
