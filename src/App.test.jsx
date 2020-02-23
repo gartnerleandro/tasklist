@@ -4,14 +4,18 @@ import { mount } from 'enzyme';
 import App from './App';
 
 describe('Tasklist app render', () => {
-  it('render a list of cards and add button', () => {
+  it('render full app', () => {
     const wrapper = mount(<App />);
 
     expect(wrapper.find('.app')).toHaveLength(1);
-    expect(wrapper.find('.header')).toHaveLength(1);
-    expect(wrapper.find('.header').childAt(0).type()).toBe('button');
     expect(wrapper.find('.list')).toHaveLength(1);
+    expect(wrapper.find('.filters')).toHaveLength(1);
     expect(wrapper.find('.modal')).toHaveLength(0);
+    expect(wrapper.find('.add-button')).toHaveLength(1);
+
+    wrapper.find('.add-button').simulate('click');
+
+    expect(wrapper.find('.modal')).toHaveLength(1);
 
     wrapper.unmount();
   });
