@@ -5,7 +5,7 @@ import Card from '../card';
 
 import './index.scss';
 
-const List = ({ elements }) => {
+const List = ({ elements, onDeleteCard, onCardStatusChange }) => {
   if (elements && elements.length) {
     return (
       <div className="list">
@@ -16,6 +16,8 @@ const List = ({ elements }) => {
               body={element.body}
               key={element.id}
               status={element.status}
+              onDelete={() => onDeleteCard(element.id)}
+              onStatusChange={() => onCardStatusChange(element.id, element.status)}
             />
           ))
         }
@@ -32,10 +34,14 @@ const List = ({ elements }) => {
 
 List.defaultProps = {
   elements: [],
+  onDeleteCard: () => true,
+  onCardStatusChange: () => true,
 };
 
 List.propTypes = {
   elements: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
+  onDeleteCard: PropTypes.func,
+  onCardStatusChange: PropTypes.func,
 };
 
 export default List;

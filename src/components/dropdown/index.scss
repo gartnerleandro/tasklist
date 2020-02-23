@@ -1,0 +1,52 @@
+@import '../../styles/constants.scss';
+
+div.menu-wrapper {
+  position: relative;
+  user-select: none;
+
+  button.menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    font-size: 18px;
+    right: 5px;
+
+    &:focus {
+      outline: none;
+    }
+    
+
+    &:hover {
+      opacity: 0.4;
+    }
+
+    i {
+      color: $black;
+    }
+  }
+
+  i.fas.fa-caret-up {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    color: $black;
+  }
+
+  div.dropdown-content {
+    position: absolute;
+    right: -7%;
+    top: 27px;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    padding: 5px;
+    border: 1px solid $black;
+    border-radius: 5px;
+    z-index: 1;
+
+    button:hover {
+      cursor: pointer;
+    }
+  }
+}

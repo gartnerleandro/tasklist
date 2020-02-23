@@ -6,31 +6,52 @@ import Modal from './components/modal/Modal';
 
 import './index.scss';
 
-const taks = [
-  {
-    id: 1,
-    title: 'fist',
-    body: 'fist body',
-    status: CARD_STATUS.COMPLETED,
-  },
-  {
-    id: 2,
-    title: 'second',
-    body: 'second body',
-    status: CARD_STATUS.UNCOMPLETED,
-  },
-  {
-    id: 3,
-    title: 'third',
-    body: 'third body',
-    status: CARD_STATUS.COMPLETED,
-  },
-];
-
 const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      title: 'fist',
+      body: 'fist body',
+      status: CARD_STATUS.COMPLETED,
+    },
+    {
+      id: 2,
+      title: 'second',
+      body: 'second body',
+      status: CARD_STATUS.UNCOMPLETED,
+    },
+    {
+      id: 3,
+      title: 'third',
+      body: 'third body',
+      status: CARD_STATUS.COMPLETED,
+    },
+  ]);
+
+  const onDeleteCard = (cardId) => {
+    const newTasks = [...tasks];
+    const taskIndex = newTasks.findIndex((task) => task.id === cardId);
+
+    if (taskIndex > -1) {
+      newTasks.splice(taskIndex, 1);
+      setTasks(newTasks);
+    }
+  };
+
+  const onCardStatusChange = (cardId, prevStatus) => {
+    const newTasks = [...tasks];
+    const taskIndex = newTasks.findIndex((task) => task.id === cardId);
+    const nextStatus = prevStatus === CARD_STATUS.UNCOMPLETED ? CARD_STATUS.COMPLETED
+      : CARD_STATUS.UNCOMPLETED;
+
+    if (taskIndex > -1) {
+      newTasks[taskIndex].status = nextStatus;
+      setTasks(newTasks);
+    }
+  };
 
   const closeModal = () => {
     setShowModal(false);
@@ -51,12 +72,14 @@ const App = () => {
   };
 
   const onAddNew = () => {
-    taks.push({
-      id: taks.length + 1,
+    const newTasks = [...tasks];
+    newTasks.push({
+      id: tasks.length + tasks.length + 1,
       title,
       body,
       status: CARD_STATUS.UNCOMPLETED,
     });
+    setTasks(newTasks);
     closeModal();
   };
 
@@ -68,7 +91,7 @@ const App = () => {
         </button>
       </div>
 
-      <List elements={taks} />
+      <List elements={tasks} onCardStatusChange={onCardStatusChange} onDeleteCard={onDeleteCard} />
       <Modal showModal={showModal} onClose={closeModal}>
         <div className="modal-content">
           <div className="section">

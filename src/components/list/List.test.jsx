@@ -6,7 +6,7 @@ import { CARD_STATUS } from '../card';
 
 describe('List', () => {
   it('render a list of cards with the elements passed', () => {
-    const taks = [
+    const tasks = [
       {
         id: 1,
         title: 'fist',
@@ -26,7 +26,7 @@ describe('List', () => {
         status: CARD_STATUS.COMPLETED,
       },
     ];
-    const wrapper = mount(<List elements={taks} />);
+    const wrapper = mount(<List elements={tasks} />);
 
     expect(wrapper.find('.list')).toHaveLength(1);
     expect(wrapper.find('.card')).toHaveLength(3);

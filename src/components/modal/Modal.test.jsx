@@ -11,7 +11,5 @@ describe('Modal', () => {
     expect(wrapper.find('.close-modal')).toHaveLength(1);
     expect(wrapper.find('p')).toHaveLength(1);
     expect(wrapper.find('p').html()).toBe('<p>Hello Modal</p>');
-
-    wrapper.unmount();
   });
 });
