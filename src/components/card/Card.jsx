@@ -29,24 +29,24 @@ const Card = ({
     >
       <Dropdown>
         {
-          !!onDelete && (
-            <button type="button" onClick={onDelete} className="delete-button">
-              <i className="fas fa-trash" />
-              Delete
-            </button>
-          )
-        }
-        {
           !!onStatusChange && (
             <button type="button" onClick={onStatusChange} className="status-button">
               {
                 status === CARD_STATUS.PENDING ? (
                   <i className="fas fa-check" />
                 ) : (
-                  <i className="fas fa-times" />
+                  <i className="fas fa-clock" />
                 )
               }
               {status === CARD_STATUS.PENDING ? 'Complete' : 'Pending'}
+            </button>
+          )
+        }
+        {
+          !!onDelete && (
+            <button type="button" onClick={onDelete} className="delete-button">
+              <i className="fas fa-trash" />
+              Delete
             </button>
           )
         }
