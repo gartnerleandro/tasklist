@@ -18,9 +18,12 @@ const ColorPicker = ({ colors, onSelectColor }) => {
   const renderButton = (onClick) => (
     <button
       type="button"
-      label={selectedColor}
+      label={selectedColor || defaultColor}
       className="selected-color"
-      style={{ backgroundColor: selectedColor }}
+      style={{
+        backgroundColor: selectedColor || defaultColor,
+        borderColor: selectedColor || '#8e8e8e',
+      }}
       onClick={onClick}
     />
   );
@@ -34,7 +37,10 @@ const ColorPicker = ({ colors, onSelectColor }) => {
       >
         <i className="fas fa-caret-up arrow" style={{ color: selectedColor || '#8e8e8e' }} />
         <div className="picker-content" style={{ backgroundColor: selectedColor || defaultColor, borderColor: selectedColor || defaultColor }}>
-          <div className="selected-color-label" style={{ color: selectedColor ? '#FFFFFF' : '#8e8e8e' }}>
+          <div
+            className="selected-color-label"
+            style={{ color: selectedColor ? '#FFFFFF' : '#8e8e8e' }}
+          >
             {selectedColor || 'No color selected'}
           </div>
           <div className="colors-list">

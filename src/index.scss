@@ -16,12 +16,14 @@
       margin: 0 auto;
     
       input {
-        font-size: 20px;
-        width: 100%;
-        border-top: none;
+        background-color: $white;
+        border-bottom: 1px solid rgba($gray, 0.5);
         border-left: none;
         border-right: none;
-        border-bottom: 1px solid rgba($gray, 0.5);
+        border-top: none;
+        border-radius: 0;
+        font-size: 20px;
+        width: 100%;
     
         &:focus {
           outline: none;
@@ -30,10 +32,13 @@
       }
 
       textarea {
-        font-size: 20px;
-        width: 100%;
+        background-color: $white;
         border: 1px solid rgba($gray, 0.5);
+        font-size: 20px;
         resize: none;
+        width: 100%;
+        text-shadow: none;
+        box-shadow: none;
 
         &:focus {
           outline: none;
@@ -102,6 +107,15 @@
     i {
       color: $white;
       font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .app{
+    .add-button{
+      right: 20px;
+      bottom: 50px;
     }
   }
 }

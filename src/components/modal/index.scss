@@ -41,3 +41,11 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .overlay {
+    div.modal {
+      width: 90%;
+    }
+  }
+}
