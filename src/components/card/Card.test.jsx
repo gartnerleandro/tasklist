@@ -8,7 +8,7 @@ describe('Card', () => {
     const element = {
       title: 'test',
       body: 'content',
-      status: CARD_STATUS.UNCOMPLETED,
+      status: CARD_STATUS.PENDING,
     };
     const wrapper = shallow(<Card element={element} />);
 

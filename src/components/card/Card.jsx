@@ -7,7 +7,7 @@ import './index.scss';
 
 export const CARD_STATUS = {
   COMPLETED: 'completed',
-  UNCOMPLETED: 'uncompleted',
+  PENDING: 'pending',
 };
 
 const Card = ({
@@ -21,8 +21,8 @@ const Card = ({
 
   return (
     <div
-      className={status === CARD_STATUS.UNCOMPLETED ? 'card' : 'card completed'}
-      style={color && status === CARD_STATUS.UNCOMPLETED ? {
+      className={status === CARD_STATUS.PENDING ? 'card' : 'card completed'}
+      style={color && status === CARD_STATUS.PENDING ? {
         borderLeft: `8px solid ${color}`,
         borderColor: color,
       } : {}}
@@ -40,13 +40,13 @@ const Card = ({
           !!onStatusChange && (
             <button type="button" onClick={onStatusChange} className="status-button">
               {
-                status === CARD_STATUS.UNCOMPLETED ? (
+                status === CARD_STATUS.PENDING ? (
                   <i className="fas fa-check" />
                 ) : (
                   <i className="fas fa-times" />
                 )
               }
-              {status === CARD_STATUS.UNCOMPLETED ? 'Complete' : 'Uncomplete'}
+              {status === CARD_STATUS.PENDING ? 'Complete' : 'Pending'}
             </button>
           )
         }
@@ -85,7 +85,7 @@ Card.defaultProps = {
 Card.propTypes = {
   element: PropTypes.exact({
     id: PropTypes.number,
-    status: PropTypes.oneOf([CARD_STATUS.COMPLETED, CARD_STATUS.UNCOMPLETED]).isRequired,
+    status: PropTypes.oneOf([CARD_STATUS.COMPLETED, CARD_STATUS.PENDING]).isRequired,
     title: PropTypes.string.isRequired,
     body: PropTypes.string.isRequired,
     color: PropTypes.string,

@@ -27,7 +27,7 @@ const App = () => {
       id: 2,
       title: 'second',
       body: 'second body',
-      status: CARD_STATUS.UNCOMPLETED,
+      status: CARD_STATUS.PENDING,
       color: '#D9E3F0',
     },
     {
@@ -62,8 +62,8 @@ const App = () => {
   const onCardStatusChange = (cardId, prevStatus) => {
     const newTasks = [...filteredTasks];
     const taskIndex = newTasks.findIndex((task) => task.id === cardId);
-    const nextStatus = prevStatus === CARD_STATUS.UNCOMPLETED ? CARD_STATUS.COMPLETED
-      : CARD_STATUS.UNCOMPLETED;
+    const nextStatus = prevStatus === CARD_STATUS.PENDING ? CARD_STATUS.COMPLETED
+      : CARD_STATUS.PENDING;
 
     if (taskIndex > -1) {
       newTasks[taskIndex].status = nextStatus;
@@ -95,7 +95,7 @@ const App = () => {
       id: tasks.length + tasks.length + 1,
       title,
       body,
-      status: CARD_STATUS.UNCOMPLETED,
+      status: CARD_STATUS.PENDING,
       color,
     });
     setTasks(newTasks);

@@ -26,11 +26,11 @@ const Filters = ({ onFilterChange, selectedFilter }) => (
         Completed
       </button>
       <button
-        onClick={() => onFilterChange(CARD_STATUS.UNCOMPLETED)}
+        onClick={() => onFilterChange(CARD_STATUS.PENDING)}
         type="button"
-        className={selectedFilter === CARD_STATUS.UNCOMPLETED ? 'filter-button selected' : 'filter-button'}
+        className={selectedFilter === CARD_STATUS.PENDING ? 'filter-button selected' : 'filter-button'}
       >
-        Uncompleted
+        Pending
       </button>
     </div>
   </div>

@@ -17,7 +17,7 @@ describe('List', () => {
         id: 2,
         title: 'second',
         body: 'second body',
-        status: CARD_STATUS.UNCOMPLETED,
+        status: CARD_STATUS.PENDING,
       },
       {
         id: 3,
