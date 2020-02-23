@@ -2,6 +2,10 @@
 
 tasklist is a React project created by Leandro Gartner using React.
 
+## Demo
+
+This project is deployed on github using github pages, you can see the project working [here.](https://gartnerleandro.github.io/tasklist/)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development.
