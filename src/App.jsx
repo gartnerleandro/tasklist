@@ -18,22 +18,22 @@ const App = () => {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      title: 'fist',
-      body: 'fist body',
+      title: 'Code',
+      body: 'Create my own app',
       status: CARD_STATUS.COMPLETED,
       color: '#D9E3F0',
     },
     {
       id: 2,
-      title: 'second',
-      body: 'second body',
+      title: 'Sleep',
+      body: 'Go to sleep at 00:00',
       status: CARD_STATUS.PENDING,
       color: '#D9E3F0',
     },
     {
       id: 3,
-      title: 'third',
-      body: 'third body',
+      title: 'Play the piano',
+      body: 'Piano lesson at 12:30',
       status: CARD_STATUS.COMPLETED,
       color: '#D9E3F0',
     },
