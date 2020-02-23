@@ -12,10 +12,8 @@ const List = ({ elements, onDeleteCard, onCardStatusChange }) => {
         {
           elements.map((element) => (
             <Card
-              title={element.title}
-              body={element.body}
+              element={element}
               key={element.id}
-              status={element.status}
               onDelete={() => onDeleteCard(element.id)}
               onStatusChange={() => onCardStatusChange(element.id, element.status)}
             />

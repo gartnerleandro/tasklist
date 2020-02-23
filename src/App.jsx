@@ -4,6 +4,7 @@ import List from './components/list/List';
 import { CARD_STATUS } from './components/card';
 import Modal from './components/modal/Modal';
 import Filters from './components/filters/Filters';
+import ColorPicker from './components/colorPicker/ColorPicker';
 
 import './index.scss';
 
@@ -11,6 +12,7 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [color, setColor] = useState(null);
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [filteredTasks, setFilteredTasks] = useState([]);
   const [tasks, setTasks] = useState([
@@ -19,18 +21,21 @@ const App = () => {
       title: 'fist',
       body: 'fist body',
       status: CARD_STATUS.COMPLETED,
+      color: '#D9E3F0',
     },
     {
       id: 2,
       title: 'second',
       body: 'second body',
       status: CARD_STATUS.UNCOMPLETED,
+      color: '#D9E3F0',
     },
     {
       id: 3,
       title: 'third',
       body: 'third body',
       status: CARD_STATUS.COMPLETED,
+      color: '#D9E3F0',
     },
   ]);
 
@@ -91,6 +96,7 @@ const App = () => {
       title,
       body,
       status: CARD_STATUS.UNCOMPLETED,
+      color,
     });
     setTasks(newTasks);
     closeModal();
@@ -111,6 +117,12 @@ const App = () => {
         <div className="modal-content">
           <div className="section">
             <input placeholder="Title" value={title} onChange={onTitleChange} />
+          </div>
+          <div className="color-section">
+            <span className="task-color-label">
+              Task color:
+            </span>
+            <ColorPicker onSelectColor={setColor} />
           </div>
           <div className="section">
             <textarea

@@ -1,0 +1,77 @@
+@import '../../styles/constants.scss';
+
+.color-picker {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  width: 100%;
+
+  .selected-color {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  i.fas.fa-caret-up.arrow {
+    top: 14px;
+    left: 5px;
+    right: 0;
+  }
+
+  div.picker-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba($black, 0.2);
+    position: absolute;
+    min-width: 160px;
+    right: -7px;
+
+    div.selected-color-label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 160px;
+      height: 98px;
+    }
+
+    div.colors-list {
+      background-color: $white;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      button.color-button {
+        flex: 0 30%;
+        height: 20px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        i.fas.fa-times {
+          color: $red;
+        }
+      }
+    }
+  }
+}

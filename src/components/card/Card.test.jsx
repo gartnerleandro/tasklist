@@ -5,7 +5,12 @@ import Card, { CARD_STATUS } from './index';
 
 describe('Card', () => {
   it('render card with the props passed', () => {
-    const wrapper = shallow(<Card title="test" body="content" status={CARD_STATUS.UNCOMPLETED} />);
+    const element = {
+      title: 'test',
+      body: 'content',
+      status: CARD_STATUS.UNCOMPLETED,
+    };
+    const wrapper = shallow(<Card element={element} />);
 
     expect(wrapper.find('.card')).toHaveLength(1);
     expect(wrapper.find('.card').childAt(1).type()).toBe('div');

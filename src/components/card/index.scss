@@ -66,6 +66,7 @@ div.card {
 div.card.completed {
   background-color: rgba($gray, 0.3);
   border-color: rgba($gray, 0.3);
+  border-left: 8px solid rgba($gray, 0.3);
 
   div.card-body,
   div.card-title {
