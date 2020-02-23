@@ -75,6 +75,7 @@ const App = () => {
     setShowModal(false);
     setTitle('');
     setBody('');
+    setColor(null);
   };
 
   const openModal = () => {
