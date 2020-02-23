@@ -64,4 +64,28 @@
       }
     }
   }
+
+  .add-button {
+    border-radius: 50%;
+    background-color: $accent-light;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    i {
+      color: $white;
+      font-size: 20px;
+    }
+  }
 }

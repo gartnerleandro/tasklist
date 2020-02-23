@@ -1,0 +1,51 @@
+@import '../../styles/constants.scss';
+.filters {
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid $primary;
+  background-color: $primary-light;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 15px auto;
+  max-width: 400px;
+  padding: 10px;
+
+  .filters-label {
+    flex: 0.5;
+    font-size: 20px;
+    font-weight: bold;
+    color: $white;
+  }
+
+  .buttons-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex: 1.5;
+    justify-content: space-around;
+
+    .filter-button {
+      flex: 0 30%;
+      font-size: 15px;
+      border-radius: 5px;
+      padding: 5px;
+      border-color: $white;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+
+    .filter-button.selected {
+      background-color: $accent;
+      border-color: $accent-dark;
+      color: $white;
+    }
+  }
+}

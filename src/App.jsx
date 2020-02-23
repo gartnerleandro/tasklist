@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import List from './components/list/List';
 
 import { CARD_STATUS } from './components/card';
 import Modal from './components/modal/Modal';
+import Filters from './components/filters/Filters';
 
 import './index.scss';
 
@@ -10,6 +11,8 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [selectedFilter, setSelectedFilter] = useState(null);
+  const [filteredTasks, setFilteredTasks] = useState([]);
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -31,8 +34,18 @@ const App = () => {
     },
   ]);
 
+  useEffect(() => {
+    let newTasks = [...tasks];
+
+    if (selectedFilter) {
+      newTasks = tasks.filter((task) => task.status === selectedFilter);
+    }
+
+    setFilteredTasks(newTasks);
+  }, [selectedFilter, tasks]);
+
   const onDeleteCard = (cardId) => {
-    const newTasks = [...tasks];
+    const newTasks = [...filteredTasks];
     const taskIndex = newTasks.findIndex((task) => task.id === cardId);
 
     if (taskIndex > -1) {
@@ -42,7 +55,7 @@ const App = () => {
   };
 
   const onCardStatusChange = (cardId, prevStatus) => {
-    const newTasks = [...tasks];
+    const newTasks = [...filteredTasks];
     const taskIndex = newTasks.findIndex((task) => task.id === cardId);
     const nextStatus = prevStatus === CARD_STATUS.UNCOMPLETED ? CARD_STATUS.COMPLETED
       : CARD_STATUS.UNCOMPLETED;
@@ -72,7 +85,7 @@ const App = () => {
   };
 
   const onAddNew = () => {
-    const newTasks = [...tasks];
+    const newTasks = [...filteredTasks];
     newTasks.push({
       id: tasks.length + tasks.length + 1,
       title,
@@ -85,13 +98,15 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="header">
-        <button onClick={openModal} type="button">
-          Add new
-        </button>
-      </div>
-
-      <List elements={tasks} onCardStatusChange={onCardStatusChange} onDeleteCard={onDeleteCard} />
+      <Filters
+        onFilterChange={setSelectedFilter}
+        selectedFilter={selectedFilter}
+      />
+      <List
+        elements={filteredTasks}
+        onCardStatusChange={onCardStatusChange}
+        onDeleteCard={onDeleteCard}
+      />
       <Modal showModal={showModal} onClose={closeModal}>
         <div className="modal-content">
           <div className="section">
@@ -117,6 +132,9 @@ const App = () => {
           </div>
         </div>
       </Modal>
+      <button onClick={openModal} type="button" className="add-button">
+        <i className="fas fa-plus" />
+      </button>
     </div>
   );
 };
