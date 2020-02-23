@@ -1,6 +1,7 @@
 @import '../../styles/constants.scss';
 
 div.card {
+  background-color: $white;
   border-radius: 10px;
   border: 1px solid $black;
   display: flex;
@@ -10,10 +11,38 @@ div.card {
   padding: 5px;
   width: 85%;
 
+  button.delete-button {
+    background-color: $red-light;
+    border-color: $red;
+  }
+
+  button.status-button {
+    background-color: $primary;
+    border-color: $primary-dark;
+  }
+
+  button.delete-button,
+  button.status-button {
+    font-size: 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    padding: 5px;
+    color: $white;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  button.delete-button:hover,
+  button.status-button:hover {
+    opacity: 0.5;
+  }
+
   div.card-title {
     font-size: 20px;
     font-weight: bold;
-    padding: 5px 0;
+    padding: 5px;
   }
 
   div.card-body {
@@ -27,11 +56,20 @@ div.card {
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+    color: $secondary;
+    font-weight: bold;
+    opacity: 0.5;
   }
 }
 
-.completed {
+div.card.completed {
   background-color: rgba($secondary-light, 0.3);
+  border-color: rgba($secondary-light, 0.3);
+
+  div.card-body,
+  div.card-title {
+    opacity: 0.5;
+  }
 
   > div {
     text-decoration: line-through;

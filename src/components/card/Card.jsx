@@ -29,7 +29,7 @@ const Card = ({
       }
       {
         !!onStatusChange && (
-          <button type="button" onClick={onStatusChange} className="delete-button">
+          <button type="button" onClick={onStatusChange} className="status-button">
             {
               status === CARD_STATUS.UNCOMPLETED ? (
                 <i className="fas fa-check" />
@@ -37,7 +37,7 @@ const Card = ({
                 <i className="fas fa-times" />
               )
             }
-            {status === CARD_STATUS.UNCOMPLETED ? 'Completed' : 'Uncompleted'}
+            {status === CARD_STATUS.UNCOMPLETED ? 'Complete' : 'Uncomplete'}
           </button>
         )
       }
