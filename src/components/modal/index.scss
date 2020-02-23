@@ -1,33 +1,43 @@
 @import '../../styles/constants.scss';
 
-div.modal {
-  background-color: $white;
-  border-radius: 10px;
-  border: 1px solid $gray;
-  bottom: 0;
-  box-shadow: 0 5px 8px 0 rgba($black,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
-  height: fit-content;
-  left: 0;
-  margin: 0 auto;
-  padding: 5px;
+.overlay {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   right: 0;
-  top: 30%;
-  transition: all .8s;
-  width: 60%;
+  background-color: rgba($black ,0.35);
   z-index: 2;
 
-  button.close-modal {
-    color: $gray;
-    cursor: pointer;
-    float: right;
-    font-size: 18px;
-    margin: 0;
-    border: none;
-    background-color: transparent;
-
-    &:hover {
-      opacity: 0.4;
+  div.modal {
+    background-color: $white;
+    border-radius: 10px;
+    border: 1px solid $gray;
+    bottom: 0;
+    box-shadow: 0 5px 8px 0 rgba($black,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+    height: fit-content;
+    left: 0;
+    margin: 0 auto;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    transition: all .8s;
+    width: 60%;
+    z-index: 2;
+  
+    button.close-modal {
+      color: $gray;
+      cursor: pointer;
+      float: right;
+      font-size: 18px;
+      margin: 0;
+      border: none;
+      background-color: transparent;
+  
+      &:hover {
+        opacity: 0.4;
+      }
     }
   }
 }
