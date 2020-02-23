@@ -37,7 +37,7 @@ const Filters = ({ onFilterChange, selectedFilter }) => (
 );
 
 Filters.defaultProps = {
-  onFilterChange: null,
+  onFilterChange: () => true,
   selectedFilter: null,
 };
 
