@@ -91,7 +91,7 @@ const App = () => {
   };
 
   const onAddNew = () => {
-    const newTasks = [...filteredTasks];
+    const newTasks = [...tasks];
     newTasks.push({
       id: tasks.length + tasks.length + 1,
       title,
