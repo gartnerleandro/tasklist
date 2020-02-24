@@ -6,7 +6,8 @@ import './index.scss';
 const Modal = ({ showModal, children, onClose }) => {
   if (showModal) {
     return (
-      <div className="overlay">
+      <div className="modal-container">
+        <div className="overlay" />
         <div className="modal">
           <button onClick={onClose} type="button" className="close-modal">
             <i className="fas fa-times" />

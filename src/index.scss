@@ -1,6 +1,12 @@
 @import './styles/constants.scss';
 
 .app {
+  min-height: 100vh;
+
+  .header {
+    padding: 15px 0;
+  }
+
   .modal-content {
     display: flex;
     flex-direction: column;

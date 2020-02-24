@@ -105,10 +105,12 @@ const App = () => {
 
   return (
     <div className="app">
-      <Filters
-        onFilterChange={setSelectedFilter}
-        selectedFilter={selectedFilter}
-      />
+      <div className="header">
+        <Filters
+          onFilterChange={setSelectedFilter}
+          selectedFilter={selectedFilter}
+        />
+      </div>
       <List
         elements={filteredTasks}
         onCardStatusChange={onCardStatusChange}
