@@ -1,6 +1,6 @@
 @import '../../styles/constants.scss';
 
-.modal-container {
+div.modal-container {
   position: fixed;
   display: flex;
   align-items: center;
@@ -32,6 +32,8 @@
     transition: all .8s;
     width: 60%;
     z-index: 2;
+    -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   
     button.close-modal {
       color: $gray;
@@ -50,9 +52,35 @@
 }
 
 @media (max-width: 600px) {
-  .overlay {
+  .modal-container {
     div.modal {
       width: 90%;
     }
+  }
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
 }

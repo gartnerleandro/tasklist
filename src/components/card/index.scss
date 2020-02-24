@@ -77,3 +77,24 @@ div.card.completed {
     text-decoration: line-through;
   }
 }
+
+// transitions
+div.card.appear,
+div.card.enter {
+  opacity: 0;
+}
+
+div.card.appear-active,
+div.card.enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+div.card.exit {
+  opacity: 1;
+}
+
+div.card.exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}

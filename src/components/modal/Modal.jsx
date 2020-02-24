@@ -3,23 +3,17 @@ import PropTypes from 'prop-types';
 
 import './index.scss';
 
-const Modal = ({ showModal, children, onClose }) => {
-  if (showModal) {
-    return (
-      <div className="modal-container">
-        <div className="overlay" />
-        <div className="modal">
-          <button onClick={onClose} type="button" className="close-modal">
-            <i className="fas fa-times" />
-          </button>
-          {children}
-        </div>
-      </div>
-    );
-  }
-
-  return <></>;
-};
+const Modal = ({ showModal, children, onClose }) => showModal && (
+  <div className="modal-container">
+    <div className="overlay" />
+    <div className="modal">
+      <button onClick={onClose} type="button" className="close-modal">
+        <i className="fas fa-times" />
+      </button>
+      {children}
+    </div>
+  </div>
+);
 
 Modal.defaultProps = {
   showModal: false,
