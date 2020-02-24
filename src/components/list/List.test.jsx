@@ -28,7 +28,7 @@ describe('List', () => {
     ];
     const wrapper = mount(<List elements={tasks} />);
 
-    expect(wrapper.find('.list')).toHaveLength(1);
+    expect(wrapper.find('div.list')).toHaveLength(1);
     expect(wrapper.find('.card')).toHaveLength(3);
 
     wrapper.unmount();

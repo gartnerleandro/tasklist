@@ -8,7 +8,7 @@ describe('Tasklist app render', () => {
     const wrapper = mount(<App />);
 
     expect(wrapper.find('.app')).toHaveLength(1);
-    expect(wrapper.find('.list')).toHaveLength(1);
+    expect(wrapper.find('div.list')).toHaveLength(1);
     expect(wrapper.find('.filters')).toHaveLength(1);
     expect(wrapper.find('.modal')).toHaveLength(0);
     expect(wrapper.find('.add-button')).toHaveLength(1);
