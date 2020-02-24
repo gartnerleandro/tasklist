@@ -91,14 +91,16 @@
   }
 
   .add-button {
-    border-radius: 50%;
     background-color: $accent-light;
     border-color: $accent-light;
-    position: fixed;
+    border-radius: 50%;
     bottom: 20px;
-    right: 40px;
-    width: 60px;
+    box-shadow: none;
     height: 60px;
+    position: fixed;
+    right: 40px;
+    transition: linear all 0.2s;
+    width: 60px;
     z-index: 1;
 
     &:hover {
